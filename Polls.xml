@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<polls>
+	<poll id="">
+		<title/>
+		<status/>
+		<creator id="">
+			<creatorName/>
+		</creator>
+		<creationDate/>
+		<location/>
+		<description/>
+		<responses>
+			<number/>
+			<response>
+				<name/>
+				<times/>
+			</response>
+		</responses>
+	</poll>
+</polls>

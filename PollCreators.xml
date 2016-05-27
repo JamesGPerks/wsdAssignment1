@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<pollcreators>
+	<creator id="0">
+		<username>John</username>
+		<password>12345</password>
+	</creator>
+	<creator id="1">
+		<username>Brodie</username>
+		<password>hello</password>
+	</creator>
+	<creator id="2">
+		<username>Zoe</username>
+		<password>dogs</password>
+	</creator>
+	<creator id="3">
+		<username>Tiarne</username>
+		<password>cakes</password>
+	</creator>
+</pollcreators>
