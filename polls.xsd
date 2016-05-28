@@ -1,42 +1,61 @@
-<xs:schema attributeFormDefault="unqualified"
-	elementFormDefault="qualified" targetNamespace="http://www.wsdassignment2.com/Polls"
-	xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<xs:schema
+	xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://wsd.com/assignment2"
+	xmlns="http://wsd.com/assignment2"
+	elementFormDefault="qualified">
+	
+
+	<!-- Type Declarations -->
+	
+
+
+	<!-- Element Declarations -->
+
 	<xs:element name="polls">
 		<xs:complexType>
 			<xs:sequence>
-				<xs:element name="poll">
+				<xs:element name="poll" maxOccurs="unbounded" minOccurs="0">
 					<xs:complexType>
 						<xs:sequence>
-							<xs:element name="title" type="xs:string" />
-							<xs:element name="status" type="xs:string" />
-							<xs:element name="creator">
+							<xs:element type="xs:string" name="title" />
+							<xs:element name="user">
 								<xs:complexType>
 									<xs:sequence>
-										<xs:element name="creatorName" type="xs:string" />
+										<xs:element type="xs:string" name="userName" />
 									</xs:sequence>
-									<xs:attribute name="id" type="xs:string" />
+									<xs:attribute type="xs:string" name="id" use="optional" />
 								</xs:complexType>
 							</xs:element>
-							<xs:element name="creationDate" type="xs:string" />
-							<xs:element name="location" type="xs:string" />
-							<xs:element name="description" type="xs:string" />
+							<xs:element type="xs:string" name="date" />
+							<xs:element type="xs:string" name="location" />
+							<xs:element type="xs:string" name="description" />
+							<xs:element name="times">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element type="xs:string" name="time" maxOccurs="unbounded"
+											minOccurs="0" />
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
 							<xs:element name="responses">
 								<xs:complexType>
 									<xs:sequence>
-										<xs:element name="number" type="xs:string" />
-										<xs:element name="response">
+										<xs:element type="xs:string" name="number" />
+										<xs:element name="response" maxOccurs="unbounded"
+											minOccurs="0">
 											<xs:complexType>
 												<xs:sequence>
-													<xs:element name="name" type="xs:string" />
-													<xs:element name="times" type="xs:string" />
+													<xs:element type="xs:string" name="name" />
+													<xs:element type="xs:string" name="time" />
 												</xs:sequence>
 											</xs:complexType>
 										</xs:element>
 									</xs:sequence>
 								</xs:complexType>
 							</xs:element>
+							<xs:element type="xs:string" name="status" />
 						</xs:sequence>
-						<xs:attribute name="id" type="xs:string" />
+						<xs:attribute type="xs:string" name="id" use="required" />
 					</xs:complexType>
 				</xs:element>
 			</xs:sequence>
