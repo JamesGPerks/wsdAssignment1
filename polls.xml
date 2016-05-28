@@ -1,21 +1,54 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<polls xmlns="http://wsd.com/assignment2" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://wsd.com/assignment2 polls.xsd">
 
-<polls>
 	<poll id="">
-		<title/>
-		<status/>
-		<creator id="">
-			<creatorName/>
-		</creator>
-		<creationDate/>
-		<location/>
-		<description/>
+		<title />
+		<user id="">
+			<userName />
+		</user>
+		<date />
+		<location />
+		<description />
+		<times>
+			<time />
+		</times>
 		<responses>
-			<number/>
+			<number />
 			<response>
-				<name/>
-				<times/>
+				<name />
+				<time />
 			</response>
 		</responses>
+		<status />
 	</poll>
+
+	<poll id="0">
+		<title>WSD Assignment</title>
+		<user id="0">
+			<userName>Callum</userName>
+		</user>
+		<date>25/5/2016</date>
+		<location>UTS Building</location>
+		<description>Meet up for WSD assignment. Please select a time. </description>
+		<times>
+			<time>7am</time>
+			<time>9am</time>
+			<time>12pm</time>
+		</times>
+		<responses>
+			<number>2</number>
+			<response>
+				<name>Peter</name>
+				<time>7am</time>
+			</response>
+			<response>
+				<name>Tim</name>
+				<time>12pm</time>
+			</response>
+		</responses>
+		<status>OPEN</status>
+	</poll>
+
 </polls>
