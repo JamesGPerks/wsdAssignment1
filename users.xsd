@@ -1,0 +1,32 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://wsd.com/assignment2"
+	xmlns="http://wsd.com/assignment2"
+	elementFormDefault="qualified">
+
+	<!-- Type Declarations -->
+	<xs:simpleType name="password">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="8" />
+			<xs:maxLength value="20" />
+		</xs:restriction>
+	</xs:simpleType>
+
+	<!-- Element Declarations -->
+
+	<xs:element name="pollcreators">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="creator" maxOccurs="unbounded"
+					minOccurs="0">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element type="xs:string" name="username" />
+							<xs:element type="password" name="password" />
+						</xs:sequence>
+						<xs:attribute type="xs:integer" name="id" use="required" />
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>
