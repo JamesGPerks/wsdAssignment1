@@ -11,6 +11,24 @@
 </head>
 <body>
 
+<script type='text/javascript'> 
+
+var counter = 1;
+var limit = 6;
+function addInput(divName){
+     if (counter == limit)  {
+          alert("The maximum number of times allowed is " + counter + ".");
+     }
+     else {
+          var newdiv = document.createElement('div');
+          newdiv.innerHTML = " Time: <br> <input type='text' id='time["+counter+"]'>";
+          document.getElementById(divName).appendChild(newdiv);
+          counter++;
+     }
+}
+
+</script>
+
 <%
  String filePath = application.getRealPath("WEB-INF/users.xml");
 %>
@@ -51,14 +69,21 @@
 		<table>
 			<tr> <td> Title: </td> <td> <input type="text" name="title"> </td></tr>
 			<tr> <td> Location: </td> <td> <input type="text" name="location"> </td> </tr>
-			<tr> <td> Description: </td> <td> <input type="text" name="description"> </td></tr>
-			<tr> <td> Content: </td> <td> <input type="text" name="content"> </td></tr>
-			<tr> <td> </td><td> <input type="submit" id="createpoll" value="Create Poll"> </td></tr>
+			<tr> <td> Description: </td> <td> <input type="text" name="description" id="description"> </td></tr>
+
+			<tr> <td>
+				<div id = "dynamicInput">
+					Time: <br> <input type='text' id="time[0]">
+				</div>
+			</td></tr>
+			
+			<tr> <td> <input type="button" value="Add More Times" onClick="addInput('dynamicInput');"> </td><td> <input type="submit" id="createpoll" value="Create Poll"> </td></tr>
 		</table>
 		
 	</form>
 
 	<button onClick="history.go(-1);return true;"> Back </button>
+	
 <%} else { %>
 
 <!--  No logged in user found, return to either login page or mainpage -->

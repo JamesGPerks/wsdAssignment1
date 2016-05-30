@@ -36,12 +36,13 @@
             String date = todayWithoutTime;
             String location = request.getParameter("location");
             String description = request.getParameter("description");
-            String content = request.getParameter("content");
+            String responses = "None";
+            String times = request.getParameter("time[0]");
             String status = "OPEN";
 
 
          //Create a new poll of class Poll using the above variables
-            Poll poll = new Poll(title, user, date, location, description, content, status);
+            Poll poll = new Poll(title, user, date, location, description, times, status, responses);
          
          //Add the new poll created above to the poll list
             pollApp.getPolls().addPoll(poll);
